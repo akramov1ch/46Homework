@@ -18,7 +18,7 @@ type Go struct {
 	} `json:"files"`
 }
 
-func getSha256Hash(url string, filename string) (string, error) {
+func GetSha256Hash(url string, filename string) (string, error) {
 	resp, err := http.Get(url)
 	if err != nil {
 		return "", err
@@ -38,7 +38,7 @@ func getSha256Hash(url string, filename string) (string, error) {
 	return "", fmt.Errorf("file not found")
 }
 
-func calculateFileSha256(filepath string) (string, error) {
+func CalculateFileSha256(filepath string) (string, error) {
 	file, err := os.Open(filepath)
 	if err != nil {
 		return "", err
